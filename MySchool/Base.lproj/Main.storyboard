@@ -69,19 +69,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" minimumFontSize="17" id="xrt-SK-3Mw">
-                                <rect key="frame" x="100" y="99" width="177" height="30"/>
+                                <rect key="frame" x="98" y="99" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" minimumFontSize="17" id="Lp9-ha-Vgb">
-                                <rect key="frame" x="100" y="270" width="180" height="30"/>
+                                <rect key="frame" x="98" y="270" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CONFIRM PASSWORD" minimumFontSize="17" id="co7-pi-K83">
-                                <rect key="frame" x="98" y="308" width="179" height="30"/>
+                                <rect key="frame" x="98" y="308" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -133,6 +133,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="txtConfirmPassword" destination="co7-pi-K83" id="SJ0-rM-8NX"/>
+                        <outlet property="txtEmail" destination="N7W-pr-gzE" id="lYK-v6-sO2"/>
+                        <outlet property="txtFirstName" destination="5GH-n8-Xe2" id="SVP-8z-ZQh"/>
+                        <outlet property="txtLastName" destination="IIA-Or-jzr" id="4Yr-91-ttb"/>
                         <outlet property="txtPassword" destination="Lp9-ha-Vgb" id="tPh-rT-SgW"/>
                         <outlet property="txtUsername" destination="xrt-SK-3Mw" id="kYi-W9-HPi"/>
                     </connections>

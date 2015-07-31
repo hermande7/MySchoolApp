@@ -13,11 +13,18 @@ class SignupVC: UIViewController {
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
     @IBOutlet var txtConfirmPassword : UITextField!
+    @IBOutlet weak var txtFirstName: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        // added by Etienne on 31AUG2015 to hide keyboard when tapped outside text fields
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,20 +48,40 @@ class SignupVC: UIViewController {
     
     
     @IBAction func signupTapped(sender : UIButton) {
-        var username:NSString = txtUsername.text as NSString
-        var password:NSString = txtPassword.text as NSString
+        var username:NSString         = txtUsername.text as NSString
+        var first_name:NSString       = txtFirstName.text as NSString
+        var last_name:NSString        = txtLastName.text as NSString
+        var email:NSString            = txtEmail.text as NSString
+        var password:NSString         = txtPassword.text as NSString
         var confirm_password:NSString = txtConfirmPassword.text as NSString
         
+        
+        
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
-            
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign Up Failed!"
             alertView.message = "Please enter Username and Password"
             alertView.delegate = self
             alertView.addButtonWithTitle("OK")
             alertView.show()
-        } else if ( !password.isEqual(confirm_password) ) {
             
+        } else if ( first_name.isEqualToString("") || last_name.isEqualToString("") ) {
+            var alertView:UIAlertView = UIAlertView()
+            alertView.title = "Sign Up Failed!"
+            alertView.message = "Please enter first name and last name"
+            alertView.delegate = self
+            alertView.addButtonWithTitle("OK")
+            alertView.show()
+            
+        } else if ( email.isEqualToString("") ) {
+            var alertView:UIAlertView = UIAlertView()
+            alertView.title = "Sign Up Failed!"
+            alertView.message = "Please enter email address"
+            alertView.delegate = self
+            alertView.addButtonWithTitle("OK")
+            alertView.show()
+            
+        } else if ( !password.isEqual(confirm_password) ) {
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign Up Failed!"
             alertView.message = "Passwords doesn't Match"
@@ -63,7 +90,7 @@ class SignupVC: UIViewController {
             alertView.show()
         } else {
             
-            var post:NSString = "username=\(username)&password=\(password)&c_password=\(confirm_password)"
+            var post:NSString = "username=\(username)&password=\(password)&c_password=\(confirm_password)&firstname=\(first_name)&lastname=\(last_name)&email=\(email)"
             
             NSLog("PostData: %@",post);
             
@@ -156,4 +183,12 @@ class SignupVC: UIViewController {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    // added by Etienne on 31AUG2015 to dimiss keyboard when tap outside text fields
+    func DismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    
 }
