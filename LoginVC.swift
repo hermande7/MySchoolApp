@@ -145,6 +145,14 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         
     }
     
+    @IBAction func PlayAsGuestTapped(sender: UIButton) {
+        var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        prefs.setObject("Guest", forKey: "USERNAME")
+        prefs.setInteger(2, forKey: "ISLOGGEDIN")
+        prefs.synchronize()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     
     

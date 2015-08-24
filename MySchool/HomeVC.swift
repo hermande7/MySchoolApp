@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
         
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
-        if (isLoggedIn != 1) {
+        if ((isLoggedIn != 1) && (isLoggedIn != 2)){
             self.performSegueWithIdentifier("goto_login", sender: self)
         } else {
             self.usernameLabel.text = prefs.valueForKey("USERNAME") as? String
